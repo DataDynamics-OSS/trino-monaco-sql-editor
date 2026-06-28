@@ -1,0 +1,63 @@
+{
+  "name": "trino-monaco",
+  "version": "0.1.0",
+  "description": "Trino SQL editor component built on Monaco Editor for React",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "trino",
+    "monaco",
+    "monaco-editor",
+    "react",
+    "sql",
+    "editor"
+  ],
+  "main": "./dist/trino-monaco.js",
+  "module": "./dist/trino-monaco.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/trino-monaco.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite --mode demo",
+    "build": "tsc -p tsconfig.build.json && vite build",
+    "build:demo": "tsc && vite build --mode demo",
+    "preview": "vite preview --mode demo",
+    "typecheck": "tsc --noEmit",
+    "gen:parser": "node scripts/gen-parser.mjs",
+    "test:core": "tsx scripts/test-core.ts",
+    "test:metadata": "tsx scripts/test-metadata.ts",
+    "test:runner": "tsx scripts/test-runner.ts",
+    "test:live": "tsx scripts/test-live.ts",
+    "test": "tsx scripts/test-core.ts && tsx scripts/test-metadata.ts && tsx scripts/test-runner.ts"
+  },
+  "peerDependencies": {
+    "react": ">=17 || >=18 || >=19",
+    "react-dom": ">=17 || >=18 || >=19"
+  },
+  "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
+    "antlr4-c3": "^3.4.4",
+    "antlr4ng": "^3.0.16",
+    "comlink": "^4.4.2",
+    "monaco-editor": "^0.52.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "antlr4ng-cli": "^2.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tsx": "^4.22.4",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.7",
+    "vite-plugin-dts": "^4.4.0"
+  }
+}
